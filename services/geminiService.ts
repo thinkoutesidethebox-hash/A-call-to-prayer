@@ -115,7 +115,8 @@ export const generateSpiritualReport = async (
       model: 'gemini-3-flash-preview',
       contents: prompt,
     });
-    return response.text;
+    // Ensure we always return a string, even if text is undefined
+    return response.text || "No report generated.";
   } catch (error) {
     console.error("Error generating report:", error);
     throw new Error("Failed to generate report. Please try again later.");

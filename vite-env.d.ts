@@ -1,4 +1,5 @@
-/// <reference types="vite/client" />
+// Removed reference to vite/client to fix "Cannot find type definition file" error
+// The process.env.API_KEY is defined via vite.config.ts
 
 declare namespace NodeJS {
   interface ProcessEnv {
